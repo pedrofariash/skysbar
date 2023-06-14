@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sky's bar</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../dist/output.css" rel="stylesheet">
+
+	<style>
+        html, body {
+            height: 100%;
+        }
+
+        .bar li {
+        	padding: 5px 0px;
+        	width: 150px;
+        	align-content: center;
+        	text-align: center;
+        	justify-content: center;
+        	cursor: pointer;
+        }
+
+        .bar.item {
+        	width: 150px;
+
+        }
+
+
+        @media (max-width: 625px) {
+            #searchbar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1339px) {
+            .panel-items {
+                width: 1060px;
+            }
+        }
+
+        @media (max-width: 1079px) {
+            .panel-items {
+                width: 800px;
+            }
+        }
+
+        @media (max-width: 819px) {
+            .panel-items {
+                width: 540px;
+            }
+        }
+        
+        @media (max-width: 577px) {
+            .panel-items {
+                width: 280px;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgb(84 29 5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgb(194 65 12);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(239 82 15);
+        }
+    </style>
+</head>
+<body class="bg-orange-50 flex flex-col w-full font-sans">
+	<div class="sticky top-0 z-20 w-full bg-orange-700 flex flex-row justify-between ter p-4 pl-10 pr-10 items-center text-yellow-100">
+        <h1 class="text-2xl"><b>Sky's bar</b></h1>
+        <div id="searchbar" class="lg:w-100"><form class="w-full"><input type="text" placeholder="Pesquisar" class="bg-transparent placeholder:text-yellow-100 outline-0 border-yellow-100"/></form>
+        </div>
+        <h2>PEDIDOS</h2>
+    </div>
+    <div class="sticky w-full bg-gradient-to-r from-orange-600 to-orange-700 flex flex-col justify-center items-center text-yellow-100">
+    	<ul class="flex flex-row bar">
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a href="pages/whisky.html"><b>WHISKY</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a href="pages/vodka.html"><b>VODKA</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a href="pages/gin.html"><b>GIN</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>LICOR</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>ESPUMANTE</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>VINHO</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item">
+					<a><b>CHAMPAGNE</b></a>
+				</div>
+			</li>
+		</ul>
+    </div>
+
+    <div class="w-full flex flex-col mb-auto text-yellow-100">
+        <div class="relative">
+        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-screen h-64"></div>
+        	<h1 class="absolute text-2xl pl-10 pt-5"><b>Whisky</b></h1>
+        	<div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center mt-20">
+	            <div class="h-full absolute left-0 top-0 flex flex-col justify-center"><button id="bl1" class="rounded-full p-3 w-15 h-15"><img src="img/seta_l.png" width="30px" height= "30px"></button></div>
+	            <div class="h-full absolute right-0 top-0 flex flex-col justify-center"><button id="br1" class="rounded-full p-3 w-15 h-15"><img src="img/seta_r.png" width="30px" height= "30px"></button></div>
+	            <div id="panel1" class="flex flex-row min-w-[240px] max-w-[1280px] ml-5 mr-5 pb-2 overflow-x-hidden">
+	            </div>
+        	</div>
+    	</div>
+
+        <div class="relative">
+        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-screen h-64"></div>
+        	<h1 class="absolute text-2xl pl-10 pt-5"><b>Vodka</b></h1>
+        	<div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center mt-20">
+	            <div class="h-full absolute left-0 top-0 flex flex-col justify-center"><button id="bl2" class="rounded-full p-3 w-15 h-15"><img src="img/seta_l.png" width="30px" height= "30px"></button></div>
+	            <div class="h-full absolute right-0 top-0 flex flex-col justify-center"><button id="br2" class="rounded-full p-3 w-15 h-15"><img src="img/seta_r.png" width="30px" height= "30px"></button></div>
+	            <div id="panel2" class="flex flex-row min-w-[240px] max-w-[1280px] ml-5 mr-5 pb-2 overflow-x-hidden">
+	            </div>
+        	</div>
+    	</div>
+
+    	<div class="relative">
+        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-screen h-64"></div>
+        	<h1 class="absolute text-2xl pl-10 pt-5"><b>Gin</b></h1>
+        	<div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center mt-20">
+	            <div class="h-full absolute left-0 top-0 flex flex-col justify-center"><button id="bl3" class="rounded-full p-3 w-15 h-15"><img src="img/seta_l.png" width="30px" height= "30px"></button></div>
+	            <div class="h-full absolute right-0 top-0 flex flex-col justify-center"><button id="br3" class="rounded-full p-3 w-15 h-15"><img src="img/seta_r.png" width="30px" height= "30px"></button></div>
+	            <div id="panel3" class="flex flex-row min-w-[240px] max-w-[1280px] ml-5 mr-5 pb-2 overflow-x-hidden">
+	            </div>
+        	</div>
+    	</div>
+    </div>
+
+
+
+    <script>
+        const addScrollEvent = (buttonLeft, buttonRight, layout) => {
+            buttonLeft.addEventListener('click', () => {
+                	layout.scrollLeft -= 260;
+            })
+            buttonRight.addEventListener('click', () => {
+            	layout.scrollLeft += 260;
+            })
+        }
+
+        addScrollEvent(document.querySelector('#bl1'), document.querySelector('#br1'), document.querySelector('#panel1'))
+        addScrollEvent(document.querySelector('#bl2'), document.querySelector('#br2'), document.querySelector('#panel2'))
+        addScrollEvent(document.querySelector('#bl3'), document.querySelector('#br3'), document.querySelector('#panel3'))
+        
+
+
+        const colar = {
+            image: 'https://www.pngplay.com/wp-content/uploads/12/Necklace-PNG-Pic-Clip-Art-Background.png',
+            name: 'Colar',
+            price: 100
+        }
+
+        const whisky = [
+        {
+        	image: 'img/whisky_1.webp',
+        	name: 'Whisky The Chita 700 ml - Single Grain Japanese',
+        	price: 427.41
+        },
+        {
+        	image: 'img/whisky_2.webp',
+        	name: 'Whisky Johnnie Walker Double Black 1000 ml',
+        	price: 203.63
+        },
+        {
+        	image: 'img/whisky_3.webp',
+        	name: 'Whisky Old Parr 12 anos 1000 ml',
+        	price: 141.22
+        },
+        {
+        	image: 'img/whisky_4.webp',
+        	name: 'Whisky Buffalo Trace Bourbon 750 ml',
+        	price: 142.41
+        },
+        {
+        	image: 'img/whisky_5.webp',
+        	name: 'Whisky White Horse 1000 ml',
+        	price: 78.62
+        },
+        {
+        	image: 'img/whisky_6.webp',
+        	name: 'Whisky Johnnie Walker Black Label 1000 ml',
+        	price: 164.07
+        },
+        {
+        	image: 'img/whisky_7.webp',
+        	name: 'Whisky The Famous Grouse Smoky Black 750 ml',
+        	price: 132.91
+        },
+        {
+        	image: 'img/whisky_8.webp',
+        	name: "Whisky Buchanan's 12 anos 1000 ml",
+        	price: 163.09
+        },
+        {
+        	image: 'img/whisky_9.webp',
+        	name: 'Whisky Johnnie Walker Gold Label Reserve 750 ml',
+        	price: 273.30
+        }
+        ];
+
+        const vodka = [
+        {
+        	image: 'img/vodka_1.webp',
+        	name: 'Vodka Grey Goose 750 ml',
+        	price: 142.41
+        },
+        {
+        	image: 'img/vodka_2.webp',
+        	name: 'Vodka Stolichnaya 1000 ml',
+        	price: 62.20
+        },
+        {
+        	image: 'img/vodka_3.webp',
+        	name: 'Vodka Skyy 980 ml',
+        	price: 42.71
+        },
+        {
+        	image: 'img/vodka_4.webp',
+        	name: 'Fiu Fiu Tangerina com Acerola 750ml',
+        	price: 37.91
+        },
+        {
+        	image: 'img/vodka_5.webp',
+        	name: 'Vodka Grey Goose US OPEN 1000 ml',
+        	price: 205.40
+        },
+        {
+        	image: 'img/vodka_6.webp',
+        	name: 'Vodka Belvedere Lake Bartezek 700ml',
+        	price: 220.79
+        },
+        {
+        	image: 'img/vodka_7.webp',
+        	name: 'Vodka Roberto Cavalli Night 1000 ml',
+        	price: 242.39
+        },
+        {
+        	image: 'img/vodka_8.webp',
+        	name: "Vodka Absolut Elyx 4.5 Litros",
+        	price: 936.23
+        },
+        {
+        	image: 'img/vodka_9.webp',
+        	name: 'Vodka Pravda 1750 ml',
+        	price: 336.30
+        }
+        ];
+
+        const gin = [
+        {
+        	image: 'img/gin_1.webp',
+        	name: 'Gin Becosa 1000 ml',
+        	price: 41.44
+        },
+        {
+        	image: 'img/gin_2.webp',
+        	name: 'Gin Bombay Sapphire 1750 ml + 1 Taça Logo',
+        	price: 211.80
+        },
+        {
+        	image: 'img/gin_3.webp',
+        	name: 'Miniatura Gin Lamas Iris 50 ml',
+        	price: 9.56
+        },
+        {
+        	image: 'img/gin_4.webp',
+        	name: 'Gin Fords London Dry 750 ml',
+        	price: 125.08
+        },
+        {
+        	image: 'img/gin_5.webp',
+        	name: 'Gin Antiqua London Dry Tropical 1000 ml - Orgânico',
+        	price: 78.62
+        },
+        {
+        	image: 'img/gin_6.webp',
+        	name: 'Gin Nordés 700ml',
+        	price: 145.35
+        },
+        {
+        	image: 'img/gin_7.webp',
+        	name: 'Gin Weber Haus 48 Amburana 750 ml - Orgânico',
+        	price: 119.99
+        },
+        {
+        	image: 'img/gin_8.webp',
+        	name: "Miniatura Vitoria Régia Rosé 50ml",
+        	price: 16.73
+        },
+        {
+        	image: 'img/gin_9.webp',
+        	name: "Gin Greenall's 700 ml",
+        	price: 96.47
+        }
+        ];
+
+
+        for(a=0; a<9; a++) {
+            document.querySelector('#panel1').innerHTML += `
+                <div class="reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
+                    <img class="w-3/4 max-w-[300px] mx-auto" src=${whisky[a].image}>
+                    <h2 class="mx-auto text-2sm mt-2 font-bold">${whisky[a].name}</h2>
+                    </div>
+
+                    <div>
+                    <h1 class="text-xl">Por: <b>R$${whisky[a].price}</b></h1>
+                    no pix ou boleto </br>
+                    <span class="text-sm">4x de R$${(whisky[a].price / 4).toFixed(2)} sem juros</span>
+                    <div class="flex m-0 flex-row mt-2 w-full justify-between items-center h-9">
+                    	<div class="flex flex-row h-9 p-0 border-solid border border-orange-300 rounded-md items-center">
+                    		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>-</b></button>
+                    		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
+                    		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
+                    	</div>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
+                    </div>
+                    </div>
+                </div>`
+            document.querySelector('#panel2').innerHTML += `
+                <div class="reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
+                    <img class="w-3/4 max-w-[300px] mx-auto" src=${vodka[a].image}>
+                    <h2 class="mx-auto text-2sm mt-2 font-bold">${vodka[a].name}</h2>
+                    </div>
+
+                    <div>
+                    <h1 class="text-xl">Por: <b>R$${vodka[a].price}</b></h1>
+                    no pix ou boleto </br>
+                    <span class="text-sm">4x de R$${(vodka[a].price / 4).toFixed(2)} sem juros</span>
+                    <div class="flex m-0 flex-row mt-2 w-full justify-between items-center h-9">
+                    	<div class="flex flex-row h-9 p-0 border-solid border border-orange-300 rounded-md items-center">
+                    		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>-</b></button>
+                    		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
+                    		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
+                    	</div>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
+                    </div>
+                    </div>
+                </div>`
+
+            document.querySelector('#panel3').innerHTML += `
+                <div class="reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
+                    <img class="w-3/4 max-w-[300px] mx-auto" src=${gin[a].image}>
+                    <h2 class="mx-auto text-2sm mt-2 font-bold">${gin[a].name}</h2>
+                    </div>
+
+                    <div>
+                    <h1 class="text-xl">Por: <b>R$${gin[a].price}</b></h1>
+                    no pix ou boleto </br>
+                    <span class="text-sm">4x de R$${(gin[a].price / 4).toFixed(2)} sem juros</span>
+                    <div class="flex m-0 flex-row mt-2 w-full justify-between items-center h-9">
+                    	<div class="flex flex-row h-9 p-0 border-solid border border-orange-300 rounded-md items-center">
+                    		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>-</b></button>
+                    		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
+                    		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
+                    	</div>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
+                    </div>
+                    </div>
+                </div>`
+        }
+    </script>
+</body>
+</html>
