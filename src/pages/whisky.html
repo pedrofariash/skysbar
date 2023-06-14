@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whisky - Sky's bar</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="../../dist/output.css" rel="stylesheet">
+
+	<style>
+        html, body {
+            height: 100%;
+        }
+
+        .bar li {
+        	padding: 5px 0px;
+        	width: 150px;
+        	align-content: center;
+        	text-align: center;
+        	justify-content: center;
+        	cursor: pointer;
+        }
+
+        .bar.item {
+        	width: 150px;
+
+        }
+
+
+        @media (max-width: 625px) {
+            #searchbar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1339px) {
+            .panel-items {
+                width: 1060px;
+            }
+        }
+
+        @media (max-width: 1079px) {
+            .panel-items {
+                width: 800px;
+            }
+        }
+
+        @media (max-width: 819px) {
+            .panel-items {
+                width: 540px;
+            }
+        }
+        
+        @media (max-width: 577px) {
+            .panel-items {
+                width: 280px;
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgb(84 29 5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgb(194 65 12);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(239 82 15);
+        }
+    </style>
+</head>
+<body class="bg-orange-50 flex flex-col w-full font-sans">
+	<div class="sticky top-0 z-20 w-full bg-orange-700 flex flex-row justify-between ter p-4 pl-10 pr-10 items-center text-yellow-100">
+        <h1 class="text-2xl"><b>Sky's bar</b></h1>
+        <div id="searchbar" class="lg:w-100"><form class="w-full"><input type="text" placeholder="Pesquisar" class="bg-transparent placeholder:text-yellow-100 outline-0 border-yellow-100"/></form>
+        </div>
+        <h2>PEDIDOS</h2>
+    </div>
+    <div class="sticky w-full bg-gradient-to-r from-orange-600 to-orange-700 flex flex-col justify-center items-center text-yellow-100">
+    	<ul class="flex flex-row bar">
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>WHISKY</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>VODKA</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>GIN</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>LICOR</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>ESPUMANTE</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item border-yellow-100 border-r">
+					<a><b>VINHO</b></a>
+				</div>
+			</li>
+			<li class="hover:bg-orange-900">
+				<div class="bar.item">
+					<a><b>CHAMPAGNE</b></a>
+				</div>
+			</li>
+		</ul>
+    </div>
+
+</body>
+</html>
