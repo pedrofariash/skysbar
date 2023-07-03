@@ -32,6 +32,12 @@
             }
         }
 
+        @media (max-width: 1055px) {
+            #items {
+                display: none;
+            }
+        }
+
         @media (max-width: 1339px) {
             .panel-items {
                 width: 1060px;
@@ -79,7 +85,7 @@
         <h2>PEDIDOS</h2>
     </div>
     <div class="sticky w-full bg-gradient-to-r from-orange-600 to-orange-700 flex flex-col justify-center items-center text-yellow-100">
-    	<ul class="flex flex-row bar">
+    	<ul id="items" class="flex flex-row bar">
 			<li class="hover:bg-orange-900">
 				<div class="bar.item border-yellow-100 border-r">
 					<a><b>WHISKY</b></a>

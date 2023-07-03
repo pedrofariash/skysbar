@@ -32,6 +32,12 @@
             }
         }
 
+        @media (max-width: 1055px) {
+            #items {
+                display: none;
+            }
+        }
+
         @media (max-width: 1339px) {
             .panel-items {
                 width: 1060px;
@@ -56,6 +62,10 @@
             }
         }
 
+        .painelproduto:hover {
+        	cursor: pointer;
+        }
+
         ::-webkit-scrollbar {
             width: 10px;
             height: 5px;
@@ -72,14 +82,14 @@
     </style>
 </head>
 <body class="bg-orange-50 flex flex-col w-full font-sans">
-	<div class="sticky top-0 z-20 w-full bg-orange-700 flex flex-row justify-between ter p-4 pl-10 pr-10 items-center text-yellow-100">
+	<div class="z-20 w-full bg-orange-700 flex flex-row justify-between p-4 pl-10 pr-10 items-center text-yellow-100">
         <h1 class="text-2xl"><b>Sky's bar</b></h1>
         <div id="searchbar" class="lg:w-100"><form class="w-full"><input type="text" placeholder="Pesquisar" class="bg-transparent placeholder:text-yellow-100 outline-0 border-yellow-100"/></form>
         </div>
         <h2>PEDIDOS</h2>
     </div>
-    <div class="sticky w-full bg-gradient-to-r from-orange-600 to-orange-700 flex flex-col justify-center items-center text-yellow-100">
-    	<ul class="flex flex-row bar">
+    <div class="sticky top-0 z-20 ter w-full bg-gradient-to-r from-orange-600 to-orange-700 flex flex-col justify-center items-center text-yellow-100">
+    	<ul id="items" class="flex flex-row bar">
 			<li class="hover:bg-orange-900">
 				<div class="bar.item border-yellow-100 border-r">
 					<a href="pages/whisky.html"><b>WHISKY</b></a>
@@ -120,7 +130,7 @@
 
     <div class="w-full flex flex-col mb-auto text-yellow-100">
         <div class="relative">
-        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-screen h-64"></div>
+        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-full h-64"></div>
         	<h1 class="absolute text-2xl pl-10 pt-5"><b>Whisky</b></h1>
         	<div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center mt-20">
 	            <div class="h-full absolute left-0 top-0 flex flex-col justify-center"><button id="bl1" class="rounded-full p-3 w-15 h-15"><img src="img/seta_l.png" width="30px" height= "30px"></button></div>
@@ -131,7 +141,7 @@
     	</div>
 
         <div class="relative">
-        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-screen h-64"></div>
+        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-full h-64"></div>
         	<h1 class="absolute text-2xl pl-10 pt-5"><b>Vodka</b></h1>
         	<div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center mt-20">
 	            <div class="h-full absolute left-0 top-0 flex flex-col justify-center"><button id="bl2" class="rounded-full p-3 w-15 h-15"><img src="img/seta_l.png" width="30px" height= "30px"></button></div>
@@ -142,7 +152,7 @@
     	</div>
 
     	<div class="relative">
-        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-screen h-64"></div>
+        	<div class="absolute bg-gradient-to-r from-orange-950 to-orange-800 top-0 left-0 bg-black w-full h-64"></div>
         	<h1 class="absolute text-2xl pl-10 pt-5"><b>Gin</b></h1>
         	<div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center mt-20">
 	            <div class="h-full absolute left-0 top-0 flex flex-col justify-center"><button id="bl3" class="rounded-full p-3 w-15 h-15"><img src="img/seta_l.png" width="30px" height= "30px"></button></div>
@@ -324,7 +334,7 @@
 
         for(a=0; a<9; a++) {
             document.querySelector('#panel1').innerHTML += `
-                <div class="reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                <div onclick="comprar()" class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
                 	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
                     <img class="w-3/4 max-w-[300px] mx-auto" src=${whisky[a].image}>
                     <h2 class="mx-auto text-2sm mt-2 font-bold">${whisky[a].name}</h2>
@@ -340,12 +350,12 @@
                     		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
                     		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
                     	</div>
-                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm" onclick="comprar()"><b>comprar</b></button>
                     </div>
                     </div>
                 </div>`
             document.querySelector('#panel2').innerHTML += `
-                <div class="reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                <div onclick="comprar()" class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
                 	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
                     <img class="w-3/4 max-w-[300px] mx-auto" src=${vodka[a].image}>
                     <h2 class="mx-auto text-2sm mt-2 font-bold">${vodka[a].name}</h2>
@@ -361,13 +371,13 @@
                     		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
                     		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
                     	</div>
-                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm" onclick="comprar()"><b>comprar</b></button>
                     </div>
                     </div>
                 </div>`
 
             document.querySelector('#panel3').innerHTML += `
-                <div class="reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                <div onclick="comprar()" class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
                 	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
                     <img class="w-3/4 max-w-[300px] mx-auto" src=${gin[a].image}>
                     <h2 class="mx-auto text-2sm mt-2 font-bold">${gin[a].name}</h2>
@@ -383,11 +393,17 @@
                     		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
                     		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
                     	</div>
-                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm" onclick="comprar()"><b>comprar</b></button>
                     </div>
                     </div>
                 </div>`
         }
+    </script>
+
+    <script type="text/javascript">
+    	const comprar = () => {
+    		window.location.href = "pages/produto.html";
+    	}
     </script>
 </body>
 </html>
