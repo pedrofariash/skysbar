@@ -25,6 +25,10 @@
 
         }
 
+        .cursor:hover {
+            cursor: pointer;
+        }
+
 
         @media (max-width: 625px) {
             #searchbar {
@@ -66,6 +70,17 @@
         	padding-top: 15px;
         }
 
+        .zoom {
+            display:inline-block;
+            position: relative;
+        }
+
+        .zoom img {
+            display: block;
+        }
+
+        .zoom img::selection { background-color: transparent; }
+
         ::-webkit-scrollbar {
             width: 10px;
             height: 5px;
@@ -80,6 +95,16 @@
             background: rgb(239 82 15);
         }
     </style>
+
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <script src='../Simple-Image-Inner-Zoom-Plugin-jQuery-Zoom/jquery.zoom.js'></script>
+    <script>
+        const images = ['../img/whisky_1.jpg', '../img/whisky_2.jpg']
+        $(document).ready(function(){
+            $('#ex1').zoom({url:images[0], on:'mouseover', magnify: 2
+});
+        });
+    </script>
 </head>
 <body class="bg-orange-50 flex flex-col w-full font-sans items-center">
 	<div class=" z-20 w-full bg-orange-700 flex flex-row justify-between p-4 pl-10 pr-10 items-center text-yellow-100">
@@ -132,8 +157,18 @@
     	<div class="flex flex-row items-center text-yellow-800"><b>Sky's Bar</b> <img src="../img/seta_r.png" width="30px" style="transform: scale(0.4);"> <b>Whisky</b></div>
 
     	<div class="flex flex-row w-full h-fit mt-4">
-    		<div class="w-full h-[655px] bg-white justify-center items-center flex">
-    			<img src="https://www.casadabebida.com.br/img/products/whisky-johnnie-walker-double-black_1_650.jpg" width="350px">
+            <div class="flex flex-col mr-4">
+                <div class="cursor p-2 mb-2 bg-white w-[100px] h-[100px] flex justify-center items-center focus:outline focus:ring focus:ring-violet-900" onclick="mudar(0);">
+                    <img src="../img/whisky_1.jpg" width="100px">
+                </div>
+                <div class="cursor p-2 mb-2 bg-white w-[100px] h-[100px] flex justify-center items-center" onclick="mudar(1);">
+                    <img src="../img/whisky_2.jpg" width="100px">
+                </div>
+                
+            </div> 
+
+    		<div class="w-full h-[655px] bg-white justify-center items-center flex cursor-zoom-in">
+                <span class='zoom' id='ex1'> <img src='../img/whisky_1.jpg' width='631' height='655' alt='Whisky' id="foto"/> </span>
     		</div>
     		<div class="w-3/4  pl-12">
     			<h1 class="text-2xl text-yellow-900 pb-12 mb-7 border-orange-300 border-b"><b>Whisky Johnnie Walker Double Black 1000 ml</b></h1>
@@ -186,5 +221,14 @@
     	</div>
     </div>
 
+    <script type="text/javascript">
+        const foto = document.querySelector('#foto')
+
+        const mudar = (i) => {
+            foto.src = images[i]
+            $('#ex1').zoom({url:images[i], on:'mouseover', magnify: 2
+});
+        }
+    </script>
 </body>
 </html>
