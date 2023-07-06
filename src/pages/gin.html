@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gin - Sky's bar</title>
-	<meta charset="UTF-8">
+    <title>Gin - Sky's bar</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="../../dist/output.css" rel="stylesheet">
+    <link href="../../dist/output.css" rel="stylesheet">
 
-	<style>
+    <style>
         html, body {
             height: 100%;
         }
 
         .bar li {
-        	padding: 5px 0px;
-        	width: 150px;
-        	align-content: center;
-        	text-align: center;
-        	justify-content: center;
-        	cursor: pointer;
+            padding: 5px 0px;
+            width: 150px;
+            align-content: center;
+            text-align: center;
+            justify-content: center;
+            cursor: pointer;
         }
 
         .bar.item {
-        	width: 150px;
+            width: 150px;
 
+        }
+
+        .painelproduto:hover {
+            cursor: pointer;
         }
 
 
         @media (max-width: 625px) {
             #searchbar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1055px) {
+            #items {
                 display: none;
             }
         }
@@ -72,51 +82,189 @@
     </style>
 </head>
 <body class="bg-orange-50 flex flex-col w-full font-sans">
-	<div class="sticky top-0 z-20 w-full bg-orange-700 flex flex-row justify-between ter p-4 pl-10 pr-10 items-center text-yellow-100">
-        <h1 class="text-2xl"><b>Sky's bar</b></h1>
+    <div class="z-20 w-full bg-orange-700 flex flex-row justify-between p-2 pl-10 pr-10 items-center text-yellow-100">
+        <a href="../index.html"><img src="../img/logo.png" width="150px"></img></a>
         <div id="searchbar" class="lg:w-100"><form class="w-full"><input type="text" placeholder="Pesquisar" class="bg-transparent placeholder:text-yellow-100 outline-0 border-yellow-100"/></form>
         </div>
         <h2>PEDIDOS</h2>
     </div>
     <div class="sticky w-full bg-gradient-to-r from-orange-600 to-orange-700 flex flex-col justify-center items-center text-yellow-100">
-    	<ul class="flex flex-row bar">
-			<li class="hover:bg-orange-900">
-				<div class="bar.item border-yellow-100 border-r">
-					<a><b>WHISKY</b></a>
-				</div>
-			</li>
-			<li class="hover:bg-orange-900">
-				<div class="bar.item border-yellow-100 border-r">
-					<a><b>VODKA</b></a>
-				</div>
-			</li>
-			<li class="hover:bg-orange-900">
-				<div class="bar.item border-yellow-100 border-r">
-					<a><b>GIN</b></a>
-				</div>
-			</li>
-			<li class="hover:bg-orange-900">
-				<div class="bar.item border-yellow-100 border-r">
-					<a><b>LICOR</b></a>
-				</div>
-			</li>
-			<li class="hover:bg-orange-900">
-				<div class="bar.item border-yellow-100 border-r">
-					<a><b>ESPUMANTE</b></a>
-				</div>
-			</li>
-			<li class="hover:bg-orange-900">
-				<div class="bar.item border-yellow-100 border-r">
-					<a><b>VINHO</b></a>
-				</div>
-			</li>
-			<li class="hover:bg-orange-900">
-				<div class="bar.item">
-					<a><b>CHAMPAGNE</b></a>
-				</div>
-			</li>
-		</ul>
+        <ul id="items" class="flex flex-row bar">
+            <li class="hover:bg-orange-900">
+                <div class="bar.item border-yellow-100 border-r">
+                    <a href="whisky.html"><b>WHISKY</b></a>
+                </div>
+            </li>
+            <li class="hover:bg-orange-900">
+                <div class="bar.item border-yellow-100 border-r">
+                    <a href="vodka.html"><b>VODKA</b></a>
+                </div>
+            </li>
+            <li class="hover:bg-orange-900">
+                <div class="bar.item border-yellow-100 border-r">
+                    <a href="gin.html"><b>GIN</b></a>
+                </div>
+            </li>
+            <li class="hover:bg-orange-900">
+                <div class="bar.item border-yellow-100 border-r">
+                    <a><b>LICOR</b></a>
+                </div>
+            </li>
+            <li class="hover:bg-orange-900">
+                <div class="bar.item border-yellow-100 border-r">
+                    <a><b>ESPUMANTE</b></a>
+                </div>
+            </li>
+            <li class="hover:bg-orange-900">
+                <div class="bar.item border-yellow-100 border-r">
+                    <a><b>VINHO</b></a>
+                </div>
+            </li>
+            <li class="hover:bg-orange-900">
+                <div class="bar.item">
+                    <a><b>CHAMPAGNE</b></a>
+                </div>
+            </li>
+        </ul>
     </div>
 
+    <div class="p-7 w-[1300px] h-fit">
+        <div class="flex flex-row items-center text-yellow-800"><b>Sky's Bar</b> <img src="../img/seta_r.png" width="30px" style="transform: scale(0.4);"> <b>Gin</b></div>
+
+        <h1 class="text-xl text-yellow-900 mt-4 mb-4"><b>GIN - SKY'S BAR</b></h1>
+        <div class="flex flex-col w-full h-fit mt-4">
+            <div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center">
+                <div id="panel1" class="flex flex-row min-w-[240px] max-w-[1280px] ml-5 mr-5 pb-2 overflow-x-hidden">
+                </div>
+            </div>
+
+            <div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center mt-4">
+                <div id="panel2" class="flex flex-row min-w-[240px] max-w-[1280px] ml-5 mr-5 pb-2 overflow-x-hidden">
+                </div>
+            </div>
+
+            <div class="panel-items flex flex-row max-w-full relative z-0 items-center justify-center mt-4">
+                <div id="panel3" class="flex flex-row min-w-[240px] max-w-[1280px] ml-5 mr-5 pb-2 overflow-x-hidden">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const whisky = [
+        {
+            image: 'img/gin_1.webp',
+            name: 'Gin Becosa 1000 ml',
+            price: 41.44
+        },
+        {
+            image: 'img/gin_2.webp',
+            name: 'Gin Bombay Sapphire 1750 ml + 1 Taça Logo',
+            price: 211.80
+        },
+        {
+            image: 'img/gin_3.webp',
+            name: 'Miniatura Gin Lamas Iris 50 ml',
+            price: 9.56
+        },
+        {
+            image: 'img/gin_4.webp',
+            name: 'Gin Fords London Dry 750 ml',
+            price: 125.08
+        },
+        {
+            image: 'img/gin_5.webp',
+            name: 'Gin Antiqua London Dry Tropical 1000 ml - Orgânico',
+            price: 78.62
+        },
+        {
+            image: 'img/gin_6.webp',
+            name: 'Gin Nordés 700ml',
+            price: 145.35
+        },
+        {
+            image: 'img/gin_7.webp',
+            name: 'Gin Weber Haus 48 Amburana 750 ml - Orgânico',
+            price: 119.99
+        },
+        {
+            image: 'img/gin_8.webp',
+            name: "Miniatura Vitoria Régia Rosé 50ml",
+            price: 16.73
+        },
+        {
+            image: 'img/gin_9.webp',
+            name: "Gin Greenall's 700 ml",
+            price: 96.47
+        }
+        ];
+
+        for(a=0; a<3; a++) {
+            document.querySelector('#panel1').innerHTML += `
+                <div onclick="comprar(${a})" class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                    <div class="border-orange-300 border-b mx-4 mt-auto pb-7">
+                    <img class="w-3/4 max-w-[300px] mx-auto" src="../${whisky[a].image}">
+                    <h2 class="mx-auto text-2sm mt-2 font-bold">${whisky[a].name}</h2>
+                    </div>
+
+                    <div>
+                    <h1 class="text-xl">Por: <b>R$${whisky[a].price}</b></h1>
+                    no pix ou boleto </br>
+                    <span class="text-sm">4x de R$${(whisky[a].price / 4).toFixed(2)} sem juros</span>
+                    <div class="flex m-0 flex-row mt-2 w-full justify-between items-center h-9">
+                        <div class="flex flex-row h-9 p-0 border-solid border border-orange-300 rounded-md items-center">
+                            <button class="p-0 text-lg h-9 w-9 text-center items-center"><b>-</b></button>
+                            <input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
+                            <button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
+                        </div>
+                        <button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm" onclick="comprar(${a})"><b>comprar</b></button>
+                    </div>
+                    </div>
+                </div>`
+            document.querySelector('#panel2').innerHTML += `
+                <div class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                    <div class="border-orange-300 border-b mx-4 mt-auto pb-7">
+                    <img class="w-3/4 max-w-[300px] mx-auto" src="../${whisky[a+3].image}">
+                    <h2 class="mx-auto text-2sm mt-2 font-bold">${whisky[a+3].name}</h2>
+                    </div>
+
+                    <div>
+                    <h1 class="text-xl">Por: <b>R$${whisky[a+3].price}</b></h1>
+                    no pix ou boleto </br>
+                    <span class="text-sm">4x de R$${(whisky[a+3].price / 4).toFixed(2)} sem juros</span>
+                    <div class="flex m-0 flex-row mt-2 w-full justify-between items-center h-9">
+                        <div class="flex flex-row h-9 p-0 border-solid border border-orange-300 rounded-md items-center">
+                            <button class="p-0 text-lg h-9 w-9 text-center items-center"><b>-</b></button>
+                            <input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
+                            <button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
+                        </div>
+                        <button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
+                    </div>
+                    </div>
+                </div>`
+
+            document.querySelector('#panel3').innerHTML += `
+                <div class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                    <div class="border-orange-300 border-b mx-4 mt-auto pb-7">
+                    <img class="w-3/4 max-w-[300px] mx-auto" src="../${whisky[a+6].image}">
+                    <h2 class="mx-auto text-2sm mt-2 font-bold">${whisky[a+6].name}</h2>
+                    </div>
+
+                    <div>
+                    <h1 class="text-xl">Por: <b>R$${whisky[a+6].price}</b></h1>
+                    no pix ou boleto </br>
+                    <span class="text-sm">4x de R$${(whisky[a+6].price / 4).toFixed(2)} sem juros</span>
+                    <div class="flex m-0 flex-row mt-2 w-full justify-between items-center h-9">
+                        <div class="flex flex-row h-9 p-0 border-solid border border-orange-300 rounded-md items-center">
+                            <button class="p-0 text-lg h-9 w-9 text-center items-center"><b>-</b></button>
+                            <input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
+                            <button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
+                        </div>
+                        <button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
+                    </div>
+                    </div>
+                </div>`
+        }
+    </script>
 </body>
 </html>

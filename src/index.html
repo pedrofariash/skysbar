@@ -82,8 +82,8 @@
     </style>
 </head>
 <body class="bg-orange-50 flex flex-col w-full font-sans">
-	<div class="z-20 w-full bg-orange-700 flex flex-row justify-between p-4 pl-10 pr-10 items-center text-yellow-100">
-        <h1 class="text-2xl"><b>Sky's bar</b></h1>
+	<div class="z-20 w-full bg-orange-700 flex flex-row justify-between p-2 pl-10 pr-10 items-center text-yellow-100">
+        <a href="index.html"><img src="img/logo.png" width="150px"></img></a>
         <div id="searchbar" class="lg:w-100"><form class="w-full"><input type="text" placeholder="Pesquisar" class="bg-transparent placeholder:text-yellow-100 outline-0 border-yellow-100"/></form>
         </div>
         <h2>PEDIDOS</h2>
@@ -179,13 +179,6 @@
         addScrollEvent(document.querySelector('#bl2'), document.querySelector('#br2'), document.querySelector('#panel2'))
         addScrollEvent(document.querySelector('#bl3'), document.querySelector('#br3'), document.querySelector('#panel3'))
         
-
-
-        const colar = {
-            image: 'https://www.pngplay.com/wp-content/uploads/12/Necklace-PNG-Pic-Clip-Art-Background.png',
-            name: 'Colar',
-            price: 100
-        }
 
         const whisky = [
         {
@@ -334,7 +327,7 @@
 
         for(a=0; a<9; a++) {
             document.querySelector('#panel1').innerHTML += `
-                <div onclick="comprar()" class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                <div onclick="comprar(${a})" class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
                 	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
                     <img class="w-3/4 max-w-[300px] mx-auto" src=${whisky[a].image}>
                     <h2 class="mx-auto text-2sm mt-2 font-bold">${whisky[a].name}</h2>
@@ -350,12 +343,12 @@
                     		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
                     		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
                     	</div>
-                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm" onclick="comprar()"><b>comprar</b></button>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm" onclick="comprar(${a})"><b>comprar</b></button>
                     </div>
                     </div>
                 </div>`
             document.querySelector('#panel2').innerHTML += `
-                <div onclick="comprar()" class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                <div class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
                 	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
                     <img class="w-3/4 max-w-[300px] mx-auto" src=${vodka[a].image}>
                     <h2 class="mx-auto text-2sm mt-2 font-bold">${vodka[a].name}</h2>
@@ -371,13 +364,13 @@
                     		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
                     		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
                     	</div>
-                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm" onclick="comprar()"><b>comprar</b></button>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
                     </div>
                     </div>
                 </div>`
 
             document.querySelector('#panel3').innerHTML += `
-                <div onclick="comprar()" class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
+                <div class="painelproduto reveal text-center mr-5 last:mr-0 text-yellow-800 w-60 min-w-[240px] h-[513px] flex flex-col justify-end pt-3 p-0 bg-white">
                 	<div class="border-orange-300 border-b mx-4 mt-auto pb-7">
                     <img class="w-3/4 max-w-[300px] mx-auto" src=${gin[a].image}>
                     <h2 class="mx-auto text-2sm mt-2 font-bold">${gin[a].name}</h2>
@@ -393,7 +386,7 @@
                     		<input type="text" value="1" class="bg-transparent placeholder:text-black-900 outline-0 border-orange-300 border-r border-l w-9 h-6 text-center"/>
                     		<button class="p-0 text-lg h-9 w-9 text-center items-center"><b>+</b></button>
                     	</div>
-                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm" onclick="comprar()"><b>comprar</b></button>
+                    	<button class="uppercase bg-gradient-to-r from-orange-500 to-orange-600 text-yellow-200 active:bg-gradient-to-l from-orange-500 to-orange-600 p-1 pl-5 pr-5 rounded-md h-9 text-sm"><b>comprar</b></button>
                     </div>
                     </div>
                 </div>`
@@ -401,9 +394,32 @@
     </script>
 
     <script type="text/javascript">
-    	const comprar = () => {
-    		window.location.href = "pages/produto.html";
+        var count = 0
+    	const comprar = (a) => {
+    		if(a == 1) {
+                window.location.href = "pages/produto.html";
+            }
+            if(a == 2) {
+                count = 1
+            }
+            if(a == 3 && count == 1) {
+                document.body.innerHTML += `
+                <div id="DCA" class="fixed top-0 w-full h-full z-40 flex flex-row justify-center items-center">
+                    <div class="absolute z-40 top-0 w-full h-full bg-orange-200 opacity-30" onclick="voltar()"></div>
+                    <div class="absolute opacity-100 z-50">
+                        <img src="img/DCA.png"></img>
+                        <audio src="audio/Aviso_da_DCA.mp3" id="audio"></audio>
+                    </div>
+                </div>`
+                count = 0
+                const audio = document.getElementById('audio')
+                audio.play()
+            }
     	}
+        const voltar = () => {
+            const DCA = document.getElementById("DCA");
+            DCA.remove();
+        }
     </script>
 </body>
 </html>
